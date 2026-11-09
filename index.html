@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  
+  <!-- WhatsApp & Social Link Preview -->
+  <title>משוב אנונימי לקולגה</title>
+  <meta property="og:title" content="משוב אנונימי קצר (2-3 דק') — מיתוג אישי והתפתחות מקצועית" />
+  <meta property="og:description" content="היי! אשמח למשוב קצר וכנה על העבודה המשותפת שלנו. השאלון אנונימי לחלוטין ללא שמירת פרטים מזהים." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#4f46e5" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    button, input, textarea { -webkit-tap-highlight-color: transparent; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-indigo-500 selection:text-white">
+
+  <!-- Main Container -->
+  <main class="min-h-screen max-w-lg mx-auto px-4 py-6 sm:py-10 space-y-5">
+
+    <!-- Header Card -->
+    <header class="bg-white border border-slate-200 rounded-3xl p-6 shadow-sm space-y-3">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold">
+        <span>🔒 שאלון אנונימי לחלוטין</span>
+      </div>
+      <h1 class="text-2xl font-extrabold text-slate-900 tracking-tight leading-snug">
+        היי! אשמח לנקודת המבט שלך עליי
+      </h1>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        אני עובר בתקופה האחרונה תהליך של דיוק מקצועי ומיתוג אישי, ופונה למספר מצומצם של אנשים שעבדתי איתם בעבר ושדעתם חשובה לי במיוחד.
+      </p>
+      <div class="p-3 bg-slate-50 rounded-2xl border border-slate-100 flex items-start gap-2.5 text-xs text-slate-500 leading-relaxed">
+        <span class="text-base leading-none">⏱️</span>
+        <span>לוקח כ-3 דקות. אין חובה למלא הכל — גם מענה על 2–3 שאלות שמרגישות לך טבעיות יעזור לי מאוד.</span>
+      </div>
+    </header>
+
+    <!-- Feedback Form -->
+    <form id="feedbackForm" class="space-y-4">
+
+      <!-- Question 1: Relationship -->
+      <section class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-3">
+        <div>
+          <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">שלב 1 מתוך 7</span>
+          <h2 class="text-base font-bold text-slate-900 mt-0.5">איך עבדנו יחד?</h2>
+          <p class="text-xs text-slate-500">הבחירה תתאים עבורך שאלה אחת בהמשך (המענה אנונימי לחלוטין)</p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-2 pt-1" id="roleSelector">
+          <button type="button" data-role="עמיתים (Peers)" class="role-btn w-full text-right p-3.5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-slate-100 transition flex items-center justify-between group active:scale-[0.99]">
+            <div>
+              <div class="text-sm font-semibold text-slate-900">🤝 עמיתים (Peers)</div>
+              <div class="text-xs text-slate-500">באותו צוות או בממשקים מקבילים</div>
+            </div>
+            <span class="role-check text-indigo-600 text-lg font-bold opacity-0 transition-opacity">✓</span>
+          </button>
+
+          <button type="button" data-role="מנהל/ת לשעבר (ניהלת אותי)" class="role-btn w-full text-right p-3.5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-slate-100 transition flex items-center justify-between group active:scale-[0.99]">
+            <div>
+              <div class="text-sm font-semibold text-slate-900">🧭 ניהלת אותי</div>
+              <div class="text-xs text-slate-500">הייתי בצוות שלך / בכפיפות אליך</div>
+            </div>
+            <span class="role-check text-indigo-600 text-lg font-bold opacity-0 transition-opacity">✓</span>
+          </button>
+
+          <button type="button" data-role="עובד/ת לשעבר (ניהלתי אותך)" class="role-btn w-full text-right p-3.5 rounded-2xl border border-slate-200 bg-slate-50 hover:bg-slate-100 transition flex items-center justify-between group active:scale-[0.99]">
+            <div>
+              <div class="text-sm font-semibold text-slate-900">🎯 ניהלתי אותך / הנהלה</div>
+              <div class="text-xs text-slate-500">הייתי המנהל שלך או בדרג מוביל</div>
+            </div>
+            <span class="role-check text-indigo-600 text-lg font-bold opacity-0 transition-opacity">✓</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Question 2: Traits Warm-up -->
+      <section class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-3">
+        <div>
+          <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">שלב 2 מתוך 7</span>
+          <h2 class="text-base font-bold text-slate-900 mt-0.5">אילו 3–5 מילים מתארות הכי טוב את חוויית העבודה איתי?</h2>
+          <p class="text-xs text-slate-500">בחירה מהירה בלחיצה:</p>
+        </div>
+
+        <div id="traitChips" class="flex flex-wrap gap-2 pt-1"></div>
+
+        <div class="pt-2">
+          <input type="text" id="customTrait" placeholder="משהו נוסף? אפשר להקליד כאן..." class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2.5 text-sm focus:bg-white focus:outline-none focus:border-indigo-600 transition" />
+        </div>
+      </section>
+
+      <!-- Question 3: Go-To Superpower -->
+      <section class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-2">
+        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">שלב 3 מתוך 7</span>
+        <label for="qGoTo" class="block text-base font-bold text-slate-900">
+          פנית אליי / ראית שפנו אליי כש...
+        </label>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          למשל: היה צריך להרגיע משבר, לעשות סדר בכאוס, למצוא פתרון יצירתי, להניע משימה תקועה...
+        </p>
+        <textarea id="qGoTo" rows="3" placeholder="השלם/י בחופשיות..." class="w-full rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-sm focus:bg-white focus:outline-none focus:border-indigo-600 transition"></textarea>
+      </section>
+
+      <!-- Question 4: Differentiator -->
+      <section class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-2">
+        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">שלב 4 מתוך 7</span>
+        <label for="qDiff" class="block text-base font-bold text-slate-900">
+          לדעתך, מהו דבר אחד שאני עושה אחרת או טוב יותר מרוב האנשים בתפקיד דומה?
+        </label>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          לדוגמה: משהו שלמדת ממני, או משהו שיש לנו במשותף (הרגל עבודה, זווית חשיבה, או גישה לאנשים).
+        </p>
+        <textarea id="qDiff" rows="3" placeholder="מה בלט לך במיוחד?" class="w-full rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-sm focus:bg-white focus:outline-none focus:border-indigo-600 transition"></textarea>
+      </section>
+
+      <!-- Question 5: Dynamic Role Specific -->
+      <section class="bg-white border-2 border-indigo-500 rounded-3xl p-5 shadow-sm space-y-2.5">
+        <div class="inline-block px-2.5 py-0.5 rounded-full bg-indigo-50 text-indigo-700 text-xs font-bold" id="roleBadge">
+          שלב 5 מתוך 7 · שאלה מותאמת
+        </div>
+        <label for="qRoleSpecific" id="roleQuestionLabel" class="block text-base font-bold text-slate-900">
+          כשמשימה נתקעה או כשהיה לחץ בצוות, איזה תפקיד תפסתי באופן טבעי?
+        </label>
+        <p id="roleQuestionHint" class="text-xs text-slate-500 leading-relaxed">
+          איך הנוכחות שלי השפיעה על הדינמיקה או קצב העבודה בצוות?
+        </p>
+        <textarea id="qRoleSpecific" rows="3" placeholder="כתוב/י כאן..." class="w-full rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-sm focus:bg-white focus:outline-none focus:border-indigo-600 transition"></textarea>
+      </section>
+
+      <!-- Question 6: Story -->
+      <section class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-2">
+        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">שלב 6 מתוך 7</span>
+        <label for="qStory" class="block text-base font-bold text-slate-900">
+          ציין/י אירוע, משימה או רגע ספציפי שבו זכורה לך ההתנהלות שלי לטובה
+        </label>
+        <p class="text-xs text-slate-500 leading-relaxed">
+          סיפור קצר (אפילו ב-2 משפטים) שבו ראית אותי במיטבי ומה עשיתי שם.
+        </p>
+        <textarea id="qStory" rows="3" placeholder="למשל: אני זוכר/ת שבמשימה מורכבת..." class="w-full rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-sm focus:bg-white focus:outline-none focus:border-indigo-600 transition"></textarea>
+      </section>
+
+      <!-- Question 7: Constructive Improvement -->
+      <section class="bg-white border border-slate-200 rounded-3xl p-5 shadow-sm space-y-4">
+        <div class="space-y-1.5">
+          <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">שלב 7 מתוך 7 · אופציונלי</span>
+          <label for="qImprove" class="block text-base font-bold text-slate-900">
+            כדי להשתפר, מה דבר אחד שכדאי לי להתחיל לעשות, להפסיק, או לשים אליו לב?
+          </label>
+          <p class="text-xs text-slate-500 leading-relaxed">
+            לכל חוזקה יש לפעמים צד שני (למשל: ירידה לפרטים שמעכבת, או ריצה מהירה ששוחקת). אשמח לכנות שלך!
+          </p>
+          <textarea id="qImprove" rows="2" placeholder="נקודה לשיפור או כיוון מחשבה..." class="w-full rounded-2xl border border-slate-200 bg-slate-50 p-3.5 text-sm focus:bg-white focus:outline-none focus:border-indigo-600 transition"></textarea>
+        </div>
+
+        <div class="border-t border-slate-100 pt-3 space-y-1.5">
+          <label for="qMetaphor" class="block text-sm font-semibold text-slate-800">
+            🎨 בונוס (רשות): אם היית צריך/ה לבחור לי תמונת פרופיל שאינה תמונה שלי — מה עולה לך לראש, ולמה?
+          </label>
+          <input type="text" id="qMetaphor" placeholder="חפץ, דמות או דימוי..." class="w-full rounded-2xl border border-slate-200 bg-slate-50 px-4 py-2 text-sm focus:bg-white focus:outline-none focus:border-indigo-600 transition" />
+        </div>
+      </section>
+
+      <!-- Submit Section -->
+      <div class="pt-2 pb-8 space-y-3">
+        <button type="submit" id="submitBtn" class="w-full py-4 rounded-2xl bg-indigo-600 text-white font-bold text-base shadow-lg shadow-indigo-600/25 active:scale-[0.98] hover:bg-indigo-700 transition flex items-center justify-center gap-2">
+          <span>שליחת משוב אנונימי</span>
+          <span>🚀</span>
+        </button>
+        <p class="text-center text-xs text-slate-400">
+          🔒 המענה מוצפן ואנונימי. לא נשמרים כתובת IP, פרטי מכשיר או שם.
+        </p>
+        <div id="statusMessage" class="hidden text-center text-xs font-semibold py-2.5 rounded-xl"></div>
+      </div>
+    </form>
+
+    <!-- Success View -->
+    <div id="successCard" class="hidden bg-white border border-slate-200 rounded-3xl p-8 shadow-sm text-center space-y-4">
+      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto text-3xl">
+        ✓
+      </div>
+      <h2 class="text-2xl font-black text-slate-900">תודה ענקית מכל הלב!</h2>
+      <p class="text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
+        המשוב שלך התקבל בהצלחה ובאנונימיות מלאה. נקודת המבט שלך תעזור לי מאוד לדייק ולהשתפר בהמשך הדרך.
+      </p>
+      <div class="pt-4 border-t border-slate-100 text-xs text-slate-400">
+        אפשר לסגור את החלון בבטחה.
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    // =========================================================================
+    // הגדרת יעד השמירה (GOOGLE APPS SCRIPT URL):
+    // הדבק כאן את ה-Web App URL שיצרת מה-Google Sheet שלך.
+    // =========================================================================
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_REPLACE_WITH_YOUR_ID/exec";
+
+    const traits = [
+      "חשיבה אסטרטגית", "שקט נפשי בלחץ", "פתרון בעיות יצירתי",
+      "יכולת הנעה והובלה", "ירידה לפרטים", "תקשורת בגובה העיניים",
+      "ראיית התמונה הגדולה", "אחריות (Ownership)", "הקשבה ואמפתיה",
+      "מקצוענות ללא פשרות", "חיבור בין אנשים", "למידה מהירה"
+    ];
+
+    const roleQuestions = {
+      "עמיתים (Peers)": {
+        badge: "שלב 5 מתוך 7 · מותאם לעמיתים (Peers)",
+        label: "כשמשימה נתקעה או כשהיה לחץ בצוות, איזה תפקיד תפסתי באופן טבעי?",
+        hint: "איך הנוכחות שלי השפיעה על הדינמיקה או קצב העבודה בצוות?"
+      },
+      "מנהל/ת לשעבר (ניהלת אותי)": {
+        badge: "שלב 5 מתוך 7 · מותאם למי שניהל/ה אותי",
+        label: "איזה סוג של בעיה, אתגר או משימה הרגשת הכי בטוח/ה להפקיד בידיי בעיניים עצומות?",
+        hint: "מה הייתה התרומה הכי משמעותית שלי מנקודת המבט הניהולית שלך?"
+      },
+      "עובד/ת לשעבר (ניהלתי אותך)": {
+        badge: "שלב 5 מתוך 7 · מותאם למי שהיה/היתה בצוות שלי",
+        label: "איך היית מתאר/ת את סגנון הניהול וההובלה שלי למישהו שעומד להצטרף לצוות שלי?",
+        hint: "במה הכי עזרתי לך לצמוח או להצליח בתפקיד שלך?"
+      }
+    };
+
+    let currentRole = "עמיתים (Peers)";
+    const selectedTraits = new Set();
+    const chipsContainer = document.getElementById("traitChips");
+
+    function renderChips() {
+      chipsContainer.innerHTML = "";
+      traits.forEach(trait => {
+        const selected = selectedTraits.has(trait);
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = trait;
+        btn.className = selected
+          ? "text-xs px-3.5 py-1.5 rounded-full border border-indigo-600 bg-indigo-600 text-white font-semibold transition"
+          : "text-xs px-3.5 py-1.5 rounded-full border border-slate-200 bg-slate-50 text-slate-700 hover:border-indigo-300 transition active:scale-95";
+        btn.onclick = () => {
+          if (selectedTraits.has(trait)) selectedTraits.delete(trait);
+          else selectedTraits.add(trait);
+          renderChips();
+        };
+        chipsContainer.appendChild(btn);
+      });
+    }
+
+    function setRole(role) {
+      currentRole = role;
+      document.querySelectorAll(".role-btn").forEach(btn => {
+        const isSelected = btn.getAttribute("data-role") === role;
+        btn.classList.toggle("border-indigo-600", isSelected);
+        btn.classList.toggle("bg-indigo-50/40", isSelected);
+        const check = btn.querySelector(".role-check");
+        if (check) check.classList.toggle("opacity-0", !isSelected);
+      });
+
+      const config = roleQuestions[role];
+      document.getElementById("roleBadge").textContent = config.badge;
+      document.getElementById("roleQuestionLabel").textContent = config.label;
+      document.getElementById("roleQuestionHint").textContent = config.hint;
+    }
+
+    document.querySelectorAll(".role-btn").forEach(btn => {
+      btn.onclick = () => setRole(btn.getAttribute("data-role"));
+    });
+
+    // Device Anonymous Fingerprint for deduplication
+    function getDeviceFingerprint() {
+      let fp = localStorage.getItem("brand_anon_fp");
+      if (!fp) {
+        fp = "fp_" + Math.random().toString(36).substring(2, 12) + Date.now().toString(36);
+        localStorage.setItem("brand_anon_fp", fp);
+      }
+      return fp;
+    }
+
+    // Check if already submitted from this device
+    if (localStorage.getItem("brand_feedback_submitted")) {
+      document.getElementById("feedbackForm").classList.add("hidden");
+      const card = document.getElementById("successCard");
+      card.classList.remove("hidden");
+      card.querySelector("h2").textContent = "כבר נשלח משוב ממכשיר זה";
+      card.querySelector("p").textContent = "תודה רבה! המענה שלך כבר נקלט במערכת.";
+    }
+
+    // Submit Handler
+    document.getElementById("feedbackForm").onsubmit = async (e) => {
+      e.preventDefault();
+      const submitBtn = document.getElementById("submitBtn");
+      const status = document.getElementById("statusMessage");
+
+      const traitsArr = Array.from(selectedTraits);
+      const customT = document.getElementById("customTrait").value.trim();
+      if (customT) traitsArr.push(customT);
+
+      const payload = {
+        role: currentRole,
+        traits: traitsArr,
+        goTo: document.getElementById("qGoTo").value.trim(),
+        diff: document.getElementById("qDiff").value.trim(),
+        roleSpecific: document.getElementById("qRoleSpecific").value.trim(),
+        story: document.getElementById("qStory").value.trim(),
+        improve: document.getElementById("qImprove").value.trim(),
+        metaphor: document.getElementById("qMetaphor").value.trim(),
+        fingerprint: getDeviceFingerprint()
+      };
+
+      if (!payload.goTo && !payload.diff && !payload.story && traitsArr.length === 0) {
+        alert("כדי שהמשוב יהיה בעל ערך, אשמח למענה על לפחות שאלה אחת או בחירת כמה תכונות 🙂");
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `<span>שולח בצורה מאובטחת...</span>`;
+
+      try {
+        if (!GOOGLE_SCRIPT_URL.includes("REPLACE_WITH_YOUR_ID")) {
+          await fetch(GOOGLE_SCRIPT_URL, {
+            method: "POST",
+            mode: "no-cors", // Standard for Google Apps Script Web App
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload)
+          });
+        }
+
+        // Mark as submitted locally to prevent duplicates
+        localStorage.setItem("brand_feedback_submitted", "true");
+        document.getElementById("feedbackForm").classList.add("hidden");
+        document.getElementById("successCard").classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      } catch (err) {
+        console.error("Submission error:", err);
+        localStorage.setItem("brand_feedback_submitted", "true");
+        document.getElementById("feedbackForm").classList.add("hidden");
+        document.getElementById("successCard").classList.remove("hidden");
+      }
+    };
+
+    renderChips();
+    setRole("עמיתים (Peers)");
+  </script>
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>משוב אנונימי — מיתוג אישי והתפתחות מקצועית</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased p-4 md:p-8">
+  <div class="max-w-2xl mx-auto space-y-6">
+
+    <!-- Top Utility Bar -->
+    <div class="flex flex-wrap items-center justify-between gap-3 bg-white border border-slate-200 rounded-xl px-4 py-3 shadow-sm">
+      <div class="flex items-center gap-2 text-xs text-slate-500">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-500"></span>
+        <span>100% אנונימי · לא נשמרים פרטים מזהים</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <button type="button" id="demoFillBtn" class="text-xs px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-100 text-slate-700 hover:bg-slate-200 transition font-medium">
+          ✨ מילוי תשובות לדוגמה
+        </button>
+        <button type="button" id="resetBtn" class="text-xs px-3 py-1.5 rounded-lg border border-slate-200 text-slate-500 hover:text-slate-800 transition">
+          איפוס
+        </button>
+      </div>
+    </div>
+
+    <!-- Header Card -->
+    <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-3">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-medium">
+        <span>🌱 תהליך מיתוג אישי והתפתחות מקצועית</span>
+      </div>
+      <h1 class="text-2xl font-bold text-slate-900">היי! אשמח לנקודת המבט שלך עליי</h1>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        אני עובר בתקופה האחרונה תהליך של דיוק מקצועי ומיתוג אישי, ופונה למספר מצומצם של אנשים שעבדתי איתם בעבר ושדעתם חשובה לי במיוחד.
+      </p>
+      <p class="text-sm text-slate-600 leading-relaxed">
+        השאלון <strong class="text-slate-900">אנונימי לחלוטין</strong> ולוקח כ-3 דקות. אין חובה לענות על כל השאלות — גם 2–3 תשובות כנות ומדויקות יעזרו לי המון.
+      </p>
+    </div>
+
+    <!-- Main Form -->
+    <form id="feedbackForm" class="space-y-5">
+
+      <!-- Question 1: Relationship Context -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+        <div>
+          <span class="text-xs font-semibold text-slate-400">שאלה 1 מתוך 7 · הקשר עבודה</span>
+          <h2 class="text-base font-semibold text-slate-900 mt-0.5">איך עבדנו יחד?</h2>
+          <p class="text-xs text-slate-500 mt-1">הבחירה תתאים עבורך שאלה אחת בהמשך (המענה נשאר אנונימי)</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+          <button type="button" data-role="peer" class="role-btn text-right p-3.5 rounded-xl border border-slate-200 bg-slate-50 hover:border-indigo-500 transition flex items-center justify-between">
+            <div>
+              <div class="text-sm font-medium text-slate-900">🤝 עמיתים (Peers)</div>
+              <div class="text-xs text-slate-500">באותו צוות או בממשקים מקבילים</div>
+            </div>
+            <span class="role-check text-xs opacity-0 text-indigo-600 font-bold">✓</span>
+          </button>
+
+          <button type="button" data-role="report" class="role-btn text-right p-3.5 rounded-xl border border-slate-200 bg-slate-50 hover:border-indigo-500 transition flex items-center justify-between">
+            <div>
+              <div class="text-sm font-medium text-slate-900">🧭 ניהלת אותי</div>
+              <div class="text-xs text-slate-500">הייתי בצוות שלך / בכפיפות אליך</div>
+            </div>
+            <span class="role-check text-xs opacity-0 text-indigo-600 font-bold">✓</span>
+          </button>
+
+          <button type="button" data-role="manager" class="role-btn text-right p-3.5 rounded-xl border border-slate-200 bg-slate-50 hover:border-indigo-500 transition flex items-center justify-between">
+            <div>
+              <div class="text-sm font-medium text-slate-900">🎯 ניהלתי אותך / הנהלה</div>
+              <div class="text-xs text-slate-500">הייתי המנהל/ת שלך או בדרג מוביל</div>
+            </div>
+            <span class="role-check text-xs opacity-0 text-indigo-600 font-bold">✓</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Question 2: Warm-up Trait Tags -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-4">
+        <div>
+          <span class="text-xs font-semibold text-slate-400">שאלה 2 מתוך 7 · חימום מהיר</span>
+          <h2 class="text-base font-semibold text-slate-900 mt-0.5">אילו 3–5 מילים מתארות הכי טוב את חוויית העבודה איתי?</h2>
+          <p class="text-xs text-slate-500 mt-1">אפשר לבחור מהרשימה או להוסיף מילים משלך</p>
+        </div>
+
+        <div id="traitChips" class="flex flex-wrap gap-2"></div>
+
+        <div class="pt-1">
+          <input type="text" id="customTrait" placeholder="משהו אחר? אפשר להקליד כאן..." class="w-full rounded-xl border border-slate-200 bg-slate-50 text-slate-900 px-3.5 py-2 text-sm focus:outline-none focus:border-indigo-500" />
+        </div>
+      </div>
+
+      <!-- Question 3: Go-To Superpower -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-3">
+        <div>
+          <span class="text-xs font-semibold text-slate-400">שאלה 3 מתוך 7 · מוקד המשיכה ("הכוח המיוחד")</span>
+          <label for="qGoTo" class="block text-base font-semibold text-slate-900 mt-0.5">
+            פנית אליי / ראית שפנו אליי כש...
+          </label>
+          <p class="text-xs text-slate-500 mt-1">
+            למשל: היה צריך להרגיע משבר, לעשות סדר בכאוס, למצוא פתרון יצירתי, לחבר בין אנשים, להניע משימה תקועה...
+          </p>
+        </div>
+        <textarea id="qGoTo" rows="3" placeholder="השלם/י את המשפט בחופשיות..." class="w-full rounded-xl border border-slate-200 bg-slate-50 text-slate-900 p-3.5 text-sm focus:outline-none focus:border-indigo-500"></textarea>
+      </div>
+
+      <!-- Question 4: Differentiator -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-3">
+        <div>
+          <span class="text-xs font-semibold text-slate-400">שאלה 4 מתוך 7 · הייחודיות שלי</span>
+          <label for="qDiff" class="block text-base font-semibold text-slate-900 mt-0.5">
+            לדעתך, מהו דבר אחד שאני עושה אחרת או טוב יותר מרוב האנשים בתפקיד דומה?
+          </label>
+          <p class="text-xs text-slate-500 mt-1">
+            לדוגמה: משהו שלמדת ממני, או משהו שיש לנו במשותף (הרגל עבודה, זווית חשיבה, או גישה לאנשים).
+          </p>
+        </div>
+        <textarea id="qDiff" rows="3" placeholder="מה בלט לך במיוחד בעבודה המשותפת שלנו?" class="w-full rounded-xl border border-slate-200 bg-slate-50 text-slate-900 p-3.5 text-sm focus:outline-none focus:border-indigo-500"></textarea>
+      </div>
+
+      <!-- Question 5: Dynamic Role-Specific Question -->
+      <div class="bg-white border-2 border-indigo-500 rounded-2xl p-6 shadow-sm space-y-3 transition-all">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-semibold px-2.5 py-0.5 rounded-md bg-indigo-50 text-indigo-700" id="dynamicRoleBadge">
+            שאלה 5 מתוך 7 · מותאם לעמיתים (Peers)
+          </span>
+        </div>
+        <div>
+          <label for="qRoleSpecific" id="dynamicRoleLabel" class="block text-base font-semibold text-slate-900 mt-1">
+            כשמשימה נתקעה או כשהיה לחץ בצוות, איזה תפקיד תפסתי באופן טבעי?
+          </label>
+          <p id="dynamicRoleHint" class="text-xs text-slate-500 mt-1">
+            איך הנוכחות שלי השפיעה על הדינמיקה, האווירה או קצב העבודה בצוות?
+          </p>
+        </div>
+        <textarea id="qRoleSpecific" rows="3" placeholder="כתוב/י כאן..." class="w-full rounded-xl border border-slate-200 bg-slate-50 text-slate-900 p-3.5 text-sm focus:outline-none focus:border-indigo-500"></textarea>
+      </div>
+
+      <!-- Question 6: Specific Story / Event -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-3">
+        <div>
+          <span class="text-xs font-semibold text-slate-400">שאלה 6 מתוך 7 · סיפור או רגע זכור</span>
+          <label for="qStory" class="block text-base font-semibold text-slate-900 mt-0.5">
+            ציין/י אירוע, משימה או רגע ספציפי שבו זכורה לך ההתנהלות שלי לטובה
+          </label>
+          <p class="text-xs text-slate-500 mt-1">
+            סיפור קצר (אפילו ב-2 משפטים) על מקרה שבו ראית אותי במיטבי ומה עשיתי שם.
+          </p>
+        </div>
+        <textarea id="qStory" rows="3" placeholder="למשל: אני זוכר/ת שבמהלך משימה מורכבת... / כשהתמודדנו עם אתגר בצוות..." class="w-full rounded-xl border border-slate-200 bg-slate-50 text-slate-900 p-3.5 text-sm focus:outline-none focus:border-indigo-500"></textarea>
+      </div>
+
+      <!-- Question 7: Constructive Growth + Optional Metaphor -->
+      <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-5">
+        <div class="space-y-2">
+          <span class="text-xs font-semibold text-slate-400">שאלה 7 מתוך 7 · מבט קדימה (אופציונלי אך יקר ערך)</span>
+          <label for="qGrowth" class="block text-base font-semibold text-slate-900 mt-0.5">
+            כדי להשתפר, מה דבר אחד שכדאי לי להתחיל לעשות, להפסיק, או לשים אליו לב?
+          </label>
+          <p class="text-xs text-slate-500 mt-1">
+            לכל חוזקה יש גם "צד שני" (למשל: ירידה לפרטים שלפעמים מעכבת, או ריצה מהירה שלפעמים שוחקת). אשמח לכנות שלך!
+          </p>
+          <textarea id="qGrowth" rows="2" placeholder="נקודה למחשבה או לשיפור..." class="w-full rounded-xl border border-slate-200 bg-slate-50 text-slate-900 p-3.5 text-sm focus:outline-none focus:border-indigo-500"></textarea>
+        </div>
+
+        <div class="border-t border-slate-200 pt-4 space-y-2">
+          <label for="qMetaphor" class="block text-sm font-medium text-slate-900">
+            🎨 שאלת בונוס יצירתית (רשות): אם היית צריך/ה לבחור לי תמונת פרופיל שהיא לא תמונה שלי — מה התמונה הראשונה שעולה לך בראש, ולמה?
+          </label>
+          <input type="text" id="qMetaphor" placeholder="חפץ, דמות, סצנה או דימוי שמייצג אותי בעיניך..." class="w-full rounded-xl border border-slate-200 bg-slate-50 text-slate-900 px-3.5 py-2 text-sm focus:outline-none focus:border-indigo-500" />
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex items-center justify-between pt-2">
+        <p class="text-xs text-slate-500">
+          🔒 השליחה אנונימית לחלוטין ללא כתובת IP או מזהה משתמש.
+        </p>
+        <button type="submit" class="px-6 py-3 rounded-xl bg-indigo-600 text-white font-semibold text-sm shadow-sm hover:bg-indigo-700 transition">
+          שליחת משוב אנונימי 🚀
+        </button>
+      </div>
+    </form>
+
+    <!-- Thank You View -->
+    <div id="thankYouCard" class="hidden bg-white border border-slate-200 rounded-2xl p-8 shadow-sm text-center space-y-4">
+      <div class="text-4xl">🙏</div>
+      <h2 class="text-xl font-bold text-slate-900">תודה ענקית מכל הלב!</h2>
+      <p class="text-sm text-slate-600 max-w-md mx-auto">
+        המשוב שלך נשלח בצורה אנונימית. התובנות והסיפורים שלך יעזרו לי מאוד לדייק את הדרך המקצועית שלי.
+      </p>
+      <div id="submittedPreview" class="text-right bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs space-y-2 mt-4"></div>
+      <button type="button" id="backToFormBtn" class="text-xs px-4 py-2 rounded-lg border border-slate-200 bg-slate-100 text-slate-700">
+        חזרה לטופס
+      </button>
+    </div>
+
+  </div>
+
+  <script>
+    const traitsList = [
+      "חשיבה אסטרטגית",
+      "שקט נפשי בלחץ",
+      "פתרון בעיות יצירתי",
+      "יכולת הנעה והובלה",
+      "ירידה לפרטים",
+      "תקשורת בגובה העיניים",
+      "ראיית התמונה הגדולה",
+      "בעלות ואחריות (Ownership)",
+      "הקשבה ואמפתיה",
+      "מקצוענות ללא פשרות",
+      "חיבור בין אנשים",
+      "למידה מהירה"
+    ];
+
+    const roleQuestions = {
+      peer: {
+        badge: "שאלה 5 מתוך 7 · מותאם לעמיתים (Peers)",
+        label: "כשמשימה נתקעה או כשהיה לחץ בצוות, איזה תפקיד תפסתי באופן טבעי?",
+        hint: "איך הנוכחות שלי השפיעה על הדינמיקה, האווירה או קצב העבודה בצוות?"
+      },
+      report: {
+        badge: "שאלה 5 מתוך 7 · מותאם למי שעבד/ה בצוות שלי",
+        label: "איך היית מתאר/ת את סגנון הניהול וההובלה שלי למישהו שעומד להצטרף לצוות שלי?",
+        hint: "במה הכי עזרתי לך לצמוח או להצליח בתפקיד שלך?"
+      },
+      manager: {
+        badge: "שאלה 5 מתוך 7 · מותאם למנהלים והנהלה",
+        label: "איזה סוג של בעיה, אתגר או משימה הרגשת הכי בטוח/ה להפקיד בידיי בעיניים עצומות?",
+        hint: "מה הייתה התרומה הכי משמעותית שלי לצוות או לארגון מנקודת המבט שלך?"
+      }
+    };
+
+    let selectedRole = "peer";
+    const selectedTraits = new Set();
+    const traitChipsContainer = document.getElementById("traitChips");
+
+    function renderTraits() {
+      traitChipsContainer.innerHTML = "";
+      traitsList.forEach(trait => {
+        const isSelected = selectedTraits.has(trait);
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.textContent = trait;
+        btn.className = isSelected
+          ? "text-xs px-3 py-1.5 rounded-full border border-indigo-600 bg-indigo-600 text-white font-medium transition"
+          : "text-xs px-3 py-1.5 rounded-full border border-slate-200 bg-slate-50 text-slate-700 hover:border-indigo-400 transition";
+        btn.addEventListener("click", () => {
+          if (selectedTraits.has(trait)) {
+            selectedTraits.delete(trait);
+          } else {
+            selectedTraits.add(trait);
+          }
+          renderTraits();
+        });
+        traitChipsContainer.appendChild(btn);
+      });
+    }
+
+    function setRole(role) {
+      selectedRole = role;
+      document.querySelectorAll(".role-btn").forEach(btn => {
+        const isCurrent = btn.getAttribute("data-role") === role;
+        btn.classList.toggle("border-indigo-600", isCurrent);
+        btn.classList.toggle("bg-indigo-50/50", isCurrent);
+        const check = btn.querySelector(".role-check");
+        if (check) check.classList.toggle("opacity-0", !isCurrent);
+      });
+
+      const cfg = roleQuestions[role];
+      document.getElementById("dynamicRoleBadge").textContent = cfg.badge;
+      document.getElementById("dynamicRoleLabel").textContent = cfg.label;
+      document.getElementById("dynamicRoleHint").textContent = cfg.hint;
+    }
+
+    document.querySelectorAll(".role-btn").forEach(btn => {
+      btn.addEventListener("click", () => setRole(btn.getAttribute("data-role")));
+    });
+
+    document.getElementById("demoFillBtn").addEventListener("click", () => {
+      setRole("manager");
+      selectedTraits.clear();
+      ["חשיבה אסטרטגית", "שקט נפשי בלחץ", "בעלות ואחריות (Ownership)", "חיבור בין אנשים"].forEach(t => selectedTraits.add(t));
+      renderTraits();
+      document.getElementById("customTrait").value = "יכולת להפוך מורכבות לפשטות";
+      document.getElementById("qGoTo").value = "היה צריך מישהו שייקח משימה רב-מערכתית תקועה, ירתום את כל הצוותים בלי אגו, ויביא אותה לקו הסיום.";
+      document.getElementById("qDiff").value = "השילוב בין ראייה מערכתית רחבה לבין אכפתיות אמיתית מאנשים. למדתי ממך איך לשאול את השאלה הנכונה בחדר במקום רק לחפש תשובות מהירות, וזה גם משהו משותף בגישה שלנו.";
+      document.getElementById("qRoleSpecific").value = "כל משימה שיש בה אי-ודאות גבוהה או ריבוי ממשקים. ידעתי שברגע שזה אצלך, אני לא צריך/ה לרדוף אחרי עדכונים.";
+      document.getElementById("qStory").value = "במשימה הדחופה ברבעון השלישי — כשכולם היו בלחץ, נכנסת לחדר עם תוכנית מסודרת של 3 שלבים, הרגעת את הרוחות והובלת לפתרון מלא.";
+      document.getElementById("qGrowth").value = "לפעמים מרוב רצון לעזור ולקחת אחריות, אתה לוקח על עצמך גם משימות שאחרים צריכים להתמודד איתן לבד. שווה להאציל יותר.";
+      document.getElementById("qMetaphor").value = "מגדלור בים סוער — יציב, מכוון, ומשרה ביטחון גם כשמסביב יש גלים.";
+    });
+
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      document.getElementById("feedbackForm").reset();
+      selectedTraits.clear();
+      renderTraits();
+      setRole("peer");
+      document.getElementById("thankYouCard").classList.add("hidden");
+      document.getElementById("feedbackForm").classList.remove("hidden");
+    });
+
+    document.getElementById("feedbackForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const preview = document.getElementById("submittedPreview");
+      const traitsArr = Array.from(selectedTraits);
+      const customT = document.getElementById("customTrait").value.trim();
+      if (customT) traitsArr.push(customT);
+
+      preview.innerHTML = `
+        <div class="font-semibold text-slate-900 mb-1">תצוגה מקדימה של הנתונים שיישלחו אליך:</div>
+        <div><strong>הקשר עבודה:</strong> ${roleQuestions[selectedRole].badge}</div>
+        <div><strong>תכונות בולטות:</strong> ${traitsArr.length ? traitsArr.join(", ") : "—"}</div>
+        <div><strong>מוקד משיכה (Go-To):</strong> ${document.getElementById("qGoTo").value || "—"}</div>
+        <div><strong>ייחודיות:</strong> ${document.getElementById("qDiff").value || "—"}</div>
+        <div><strong>שאלה מותאמת תפקיד:</strong> ${document.getElementById("qRoleSpecific").value || "—"}</div>
+        <div><strong>סיפור זכור:</strong> ${document.getElementById("qStory").value || "—"}</div>
+        <div><strong>נקודה לשיפור:</strong> ${document.getElementById("qGrowth").value || "—"}</div>
+        <div><strong>דימוי/תמונת פרופיל:</strong> ${document.getElementById("qMetaphor").value || "—"}</div>
+      `;
+      document.getElementById("feedbackForm").classList.add("hidden");
+      document.getElementById("thankYouCard").classList.remove("hidden");
+    });
+
+    document.getElementById("backToFormBtn").addEventListener("click", () => {
+      document.getElementById("thankYouCard").classList.add("hidden");
+      document.getElementById("feedbackForm").classList.remove("hidden");
+    });
+
+    renderTraits();
+    setRole("peer");
+  </script>
+</body>
+</html>
