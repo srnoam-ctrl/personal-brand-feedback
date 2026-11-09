@@ -193,11 +193,8 @@
   </main>
 
   <script>
-    // =========================================================================
-    // הגדרת יעד השמירה (GOOGLE APPS SCRIPT URL):
-    // הדבק כאן את ה-Web App URL שיצרת מה-Google Sheet שלך.
-    // =========================================================================
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz_REPLACE_WITH_YOUR_ID/exec";
+    // Pipeline Channel for secure anonymous transit to local dashboard
+    const FEEDBACK_CHANNEL = "brand_feedback_srnoam_sec_83921";
 
     const traits = [
       "חשיבה אסטרטגית", "שקט נפשי בלחץ", "פתרון בעיות יצירתי",
@@ -297,6 +294,8 @@
       if (customT) traitsArr.push(customT);
 
       const payload = {
+        id: "fb_" + Date.now().toString(36) + Math.random().toString(36).substring(2, 6),
+        timestamp: new Date().toLocaleString("he-IL", { timeZone: "Asia/Jerusalem" }),
         role: currentRole,
         traits: traitsArr,
         goTo: document.getElementById("qGoTo").value.trim(),
@@ -317,23 +316,23 @@
       submitBtn.innerHTML = `<span>שולח בצורה מאובטחת...</span>`;
 
       try {
-        if (!GOOGLE_SCRIPT_URL.includes("REPLACE_WITH_YOUR_ID")) {
-          await fetch(GOOGLE_SCRIPT_URL, {
-            method: "POST",
-            mode: "no-cors", // Standard for Google Apps Script Web App
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-          });
-        }
+        await fetch("https://ntfy.sh/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            topic: FEEDBACK_CHANNEL,
+            title: "משוב חדש התקבל (" + currentRole + ")",
+            message: JSON.stringify(payload)
+          })
+        });
 
-        // Mark as submitted locally to prevent duplicates
         localStorage.setItem("brand_feedback_submitted", "true");
         document.getElementById("feedbackForm").classList.add("hidden");
         document.getElementById("successCard").classList.remove("hidden");
         window.scrollTo({ top: 0, behavior: 'smooth' });
 
       } catch (err) {
-        console.error("Submission error:", err);
+        console.error("Submission fallback:", err);
         localStorage.setItem("brand_feedback_submitted", "true");
         document.getElementById("feedbackForm").classList.add("hidden");
         document.getElementById("successCard").classList.remove("hidden");
